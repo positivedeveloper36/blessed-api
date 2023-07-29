@@ -23,3 +23,14 @@ import Route from '@ioc:Adonis/Core/Route'
 Route.get('/', async () => {
   return { hello: 'world' }
 })
+
+Route.get('/comments/:id', async ({ request }) => {
+  return request.param('id')
+})
+
+Route.post('/comments', async ({ request }) => {
+  return request.body()
+})
+
+Route.get('/posts', 'PostsController.index')
+Route.post('/posts', 'PostsController.store')
