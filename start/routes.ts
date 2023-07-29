@@ -32,8 +32,11 @@ Route.post('/comments', async ({ request }) => {
   return request.body()
 })
 
+Route.post('/register', 'AuthController.register')
+Route.post('/login', 'AuthController.login')
+
 Route.get('/categories', 'CategoriesController.index')
 Route.post('/categories', 'CategoriesController.store')
 
 Route.get('/posts', 'PostsController.index')
-Route.post('/posts', 'PostsController.store')
+Route.post('/posts', 'PostsController.store').middleware('auth')
