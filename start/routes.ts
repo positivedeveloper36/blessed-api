@@ -32,5 +32,8 @@ Route.post('/comments', async ({ request }) => {
   return request.body()
 })
 
+Route.get('/categories', 'CategoriesController.index')
+Route.post('/categories', 'CategoriesController.store')
+
 Route.get('/posts', 'PostsController.index')
 Route.post('/posts', 'PostsController.store')
