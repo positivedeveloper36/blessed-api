@@ -26,6 +26,8 @@ Route.get('/', async () => {
   return { hello: 'world' }
 })
 
+Route.get('/comments', 'CommentsController.index')
+
 Route.get('/comments/:id', async ({ request }) => {
   return request.param('id')
 })
